@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyWars</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="./imagens/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Início</a></li>
+                <li><i class="fas fa-shopping-cart"></i><a href="/games.html">Loja</a></li>
+                <li><i class="fa-solid fa-people-group"></i><a href="./staffs/staff.html">Staff</a></li>
+                <li><i class="fa-solid fa-book"></i><a href="#">Regras</a></li>
+            </ul>
+        </nav>
+        <div class="search">
+            <input type="text" placeholder="Procurar jogador...">
+            <button>🔍</button>
+        </div>
+        <div class="status">
+            <span>0 JOGANDO AGORA</span>
+            <span>SERVER IP » BATTLE.LAND</span>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <img src="./imagens/logo.png" alt="">
+            <button>JOGAR AGORA</button>
+        </section>
+        <section class="content">
+            <div class="left">
+                <h2>REGRAS & ORIENTAÇÕES</h2>
+               
+                <p>29/07/2024 - Postado por Aweeell</p>
+                <p>Saudações, jogadores! Para garantir maior transparência e segurança a vocês na hora de suas compras, aqui estão algumas orientações importantes para proceder, além das regras do servidor propriamente.</p>
+                <h3>Transferências</h3>
+                <ul>
+                    <li>A compra deve ter sido realizada em no máximo 30 dias, salvo se a transferência for de uma conta pirata para uma original;</li>
+                    <li>O produto não pode já ter sido transferido anteriormente;</li>
+                    <li>A conta em questão não pode ter nenhum tipo de punição permanente ativa;</li>
+                    <li>O produto não pode ser um Unban ou Unmute, a não ser que a conta em questão não possua nenhuma dessas punições;</li>
+                    <li>Não transferimos produtos uma vez que já tenha sido aberto algum processo de estorno.</li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="ad">
+                    <h3>Melhore o seu jogo!</h3>
+                    <p>Ranks, cosméticos e loots</p>
+                    <a href="https://mush.com.br/loja/ranks">VISITE A LOJA</a>
+                </div>
+                <div class="discord">
+                    <h3>Discord</h3>
+                    <iframe src="https://discord.com/widget?id=1166786689566519369&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                    <button>Join Discord</button>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 Battle Land. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./scripts/main.js"></script>
+    <script>
+        document.querySelector('.hero img').addEventListener('click', function() {
+            this.classList.add('animate');
+    
+            // Remove a classe 'animate' após a duração da animação para poder clicar novamente
+            setTimeout(() => {
+                this.classList.remove('animate');
+            }, 500); // A duração aqui deve ser igual à da animação
+        });
+    </script>
+    
+</body>
+</html>

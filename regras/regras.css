@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 20px 40px;
+    border-bottom: 2px solid #f1c40f;
+}
+
+header .logo img {
+    height: 60px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.search button {
+    padding: 5px;
+    border: none;
+    background-color: #f1c40f;
+    color: #1a1a1a;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search button:hover {
+    background-color: #e67e22;
+}
+
+.search button:active {
+    background-color: #d35400;
+}
+
+.status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.hero {
+    text-align: center;
+    background: url('../imagens/banner1.png') no-repeat center center/cover;
+    padding: 100px 20px;
+}
+
+.hero img {
+    display: block;
+    margin: 0 auto;
+    height: 50px;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.hero img:hover {
+    transform: scale(1.1);
+}
+
+.hero h1 {
+    font-size: 50px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.hero button {
+    padding: 10px 20px;
+    background-color: #f1c40f;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: #77b300;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hero button:active {
+    background-color: #e67e22;
+}
+
+.regras-section {
+    margin: 20px;
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.regras-header {
+    background-color: #ff0000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.regras-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.regras-table th,
+.regras-table td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.regras-table th {
+    background-color: #f2f2f2;
+}
+
+.regras-table td button.ban-button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.regras-table td button.ban-button:hover {
+    background-color: #c0392b;
+}

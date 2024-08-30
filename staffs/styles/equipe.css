@@ -1,0 +1,233 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 20px 40px; 
+    border-bottom: 2px solid #f1c40f;
+}
+
+header .logo img {
+    height: 60px; 
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.search button {
+    padding: 5px;
+    border: none;
+    background-color: #f1c40f;
+    color: #1a1a1a;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search button:hover {
+    background-color: #e67e22;
+}
+
+.search button:active {
+    background-color: #d35400;
+}
+
+.status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.hero {
+    height: 450px; /* Adjust this value as needed to match the image */
+    background: url('../../imagens/banner1.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    text-align: center; /* Align text center */
+    margin-bottom: 20px; /* Adjust the margin to create space */
+    border-bottom: 2px solid #f1c40f; /* Add a border to create a clear division */
+}
+
+.hero h1 {
+    font-size: 48px; /* Increase the size */
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+
+
+
+.content {
+    display: flex;
+    padding: 20px;
+}
+
+.content .left {
+    flex: 2;
+    margin-right: 20px;
+    border-right: 2px solid #f1c40f;
+    background-color: #1a1a1a;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.content .left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: url('../imagens/banner1.png') no-repeat center center;
+    background-size: cover; 
+    z-index: 0;
+}
+
+.content .left img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px; 
+    height: auto;
+    z-index: 1;
+}
+
+.content .left h2,
+.content .left p {
+    position: relative;
+    z-index: 2;
+    margin-left: 60px; 
+}
+
+.content .left h2 {
+    margin-top: 40px;
+}
+
+.content .left p {
+    margin-top: 10px;
+}
+
+.content .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content .right img {
+    margin-bottom: 20px;
+    max-width: 100%;
+    height: auto;
+}
+
+.staff {
+    display: flex;
+    margin-top: 20px;
+}
+
+.staff-navigation {
+    width: 200px; /* Ajustar a largura da navegação lateral */
+    background-color: #1a1a1a;
+    border-right: 2px solid #f1c40f;
+    padding: 20px;
+}
+
+.staff-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.staff-navigation ul li {
+    padding: 10px;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.staff-navigation ul li:hover {
+    background-color: #333;
+}
+
+.staff-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #2c2c2c;
+    border-radius: 10px;
+}
+
+.staff-category {
+    display: none;
+}
+
+.staff-category.active {
+    display: block;
+}
+
+.staff-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centralizar os membros da equipe */
+}
+
+.staff-member {
+    width: 150px;
+    text-align: center;
+    margin: 10px;
+}
+
+.staff-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.staff-member p {
+    font-size: 16px;
+}
+footer {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 10px;
+    border-top: 2px solid #f1c40f;
+}
