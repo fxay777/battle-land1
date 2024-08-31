@@ -7,279 +7,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
-<style>
-    body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #1a1a1a;
-    color: #fff;
-}
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1a1a1a;
-    padding: 20px 40px; /* Aumentando o padding para aumentar a altura do header */
-    border-bottom: 2px solid #f1c40f;
-}
-
-header .logo img {
-    height: 60px; /* Aumentando a altura do logo */
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.search {
-    display: flex;
-    align-items: center;
-}
-
-.search input {
-    padding: 5px;
-    border: none;
-    border-radius: 5px 0 0 5px;
-}
-
-.search button {
-    padding: 5px;
-    border: none;
-    background-color: #f1c40f;
-    color: #1a1a1a;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.search button:hover {
-    background-color: #e67e22;
-}
-
-.search button:active {
-    background-color: #d35400;
-}
-
-.status {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.hero {
-    text-align: center;
-    background: url('../imagens/banner.png') no-repeat center center/cover;
-    padding: 100px 20px;
-}
-
-.hero img {
-    display: block;
-    margin: 0 auto;
-    height: 100px;
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.3s ease; /* Adiciona a transição suave */
-}
-
-.hero img:hover {
-    transform: scale(1.1); /* Aumenta a imagem em 10% */
-}
-
-.hero h1 {
-    font-size: 50px;
-}
-
-.hero p {
-    font-size: 18px;
-    margin: 20px 0;
-}
-
-.hero button {
-    padding: 10px 20px;
-    background-color: #f1c40f;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    border-radius: 15px; /* Deixando o botão mais redondo */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adicionando sombra */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hero button:hover {
-    background-color: #77b300;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
-}
-
-.hero button:active {
-    background-color: #e67e22; /* Mudando a cor ao clicar */
-}
-
-.content {
-    display: flex;
-    padding: 20px;
-}
-
-.content .left {
-    flex: 2;
-    margin-right: 20px;
-    border-right: 2px solid #f1c40f;
-    background-color: #1a1a1a;
-    padding: 20px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    overflow: hidden; /* Adiciona esta linha para garantir que o conteúdo excedente seja cortado */
-}
-
-.content .left::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 200px;
-    background: url('../imagens/banner1.png') no-repeat center center;
-    background-size: cover; /* Ajusta o tamanho do fundo para cobrir toda a área */
-    z-index: 0;
-}
-
-.content .left img {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 50px; /* Ajuste o tamanho conforme necessário */
-    height: auto;
-    z-index: 1;
-}
-
-.content .left h2,
-.content .left p {
-    position: relative;
-    z-index: 2;
-    margin-left: 60px; /* Move o texto para a direita */
-}
-
-.content .left h2 {
-    margin-top: 40px; /* Ajuste conforme necessário */
-}
-
-.content .left p {
-    margin-top: 10px; /* Ajuste conforme necessário */
-}
-
-
-
-.content .right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.content .right .ad,
-.content .right .discord {
-    background-color: #333;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.content .right .ad button,
-.content .right .discord button {
-    padding: 10px 20px;
-    background-color: #f1c40f;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 15px; /* Deixando o botão mais redondo */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adicionando sombra */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.content .right .ad button:hover,
-.content .right .discord button:hover {
-    background-color: #f39c12;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
-}
-
-.content .right .ad button:active,
-.content .right .discord button:active {
-    background-color: #e67e22; /* Mudando a cor ao clicar */
-}
-
-.content .right .discord {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.content .right .discord iframe {
-    margin-bottom: 20px;
-}
-
-.right a {
-    padding: 8px 15px;
-    background-color: #f1c40f;
-    color: rgb(5, 5, 5);
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 15px; /* Deixando o botão mais redondo */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adicionando sombra */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-footer {
-    background-color: #1a1a1a;
-    text-align: center;
-    padding: 10px;
-    border-top: 2px solid #f1c40f;
-}
-
-@keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-.hero img.animate {
-    animation: shake 0.5s; /* Duração da animação */
-    animation-iteration-count: 1; /* Número de vezes que a animação se repete */
-}
-
-</style>
 <body>
     <header>
         <div class="logo">
             <img src="./imagens/logo.png" alt="Logo">
         </div>
-        <nav>
-            <ul>
+        <div class="hamburger-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav class="container">
+            <ul class="containar-bar">
                 <li><a href="./index.html">Início</a></li>
                 <li><i class="fas fa-shopping-cart"></i><a href="https://loja.battle.land/loja">Loja</a></li>
                 <li><i class="fa-solid fa-people-group"></i><a href="./staffs/staff.html">Staff</a></li>
@@ -295,6 +33,7 @@ footer {
             <span>SERVER IP » BATTLE.LAND</span>
         </div>
     </header>
+    
     <main>
         <section class="hero">
             <img src="./imagens/logo.png" alt="">
@@ -302,28 +41,31 @@ footer {
         </section>
         <section class="content">
             <div class="left">
-                <h2>REGRAS & ORIENTAÇÕES</h2>
-               
-                <p>29/07/2024 - Postado por Aweeell</p>
-                <p>Saudações, jogadores! Para garantir maior transparência e segurança a vocês na hora de suas compras, aqui estão algumas orientações importantes para proceder, além das regras do servidor propriamente.</p>
-                <h3>Transferências</h3>
-                <ul>
-                    <li>A compra deve ter sido realizada em no máximo 30 dias, salvo se a transferência for de uma conta pirata para uma original;</li>
-                    <li>O produto não pode já ter sido transferido anteriormente;</li>
-                    <li>A conta em questão não pode ter nenhum tipo de punição permanente ativa;</li>
-                    <li>O produto não pode ser um Unban ou Unmute, a não ser que a conta em questão não possua nenhuma dessas punições;</li>
-                    <li>Não transferimos produtos uma vez que já tenha sido aberto algum processo de estorno.</li>
-                </ul>
+                <div class="regras-container">
+                    <div class="header-regras">
+                        <h2>REGRAS & ORIENTAÇÕES</h2>
+                    </div>
+                    <p>29/07/2024 - Postado por Aweeell</p>
+                    <p>Saudações, jogadores! Para garantir maior transparência e segurança a vocês na hora de suas compras, aqui estão algumas orientações importantes para proceder, além das regras do servidor propriamente.</p>
+                    <h3>Transferências</h3>
+                    <ul>
+                        <li>A compra deve ter sido realizada em no máximo 30 dias, salvo se a transferência for de uma conta pirata para uma original;</li>
+                        <li>O produto não pode já ter sido transferido anteriormente;</li>
+                        <li>A conta em questão não pode ter nenhum tipo de punição permanente ativa;</li>
+                        <li>O produto não pode ser um Unban ou Unmute, a não ser que a conta em questão não possua nenhuma dessas punições;</li>
+                        <li>Não transferimos produtos uma vez que já tenha sido aberto algum processo de estorno.</li>
+                    </ul>
+                </div>
             </div>
             <div class="right">
                 <div class="ad">
                     <h3>Melhore o seu jogo!</h3>
                     <p>Ranks, cosméticos e loots</p>
-                    <a href="https://mush.com.br/loja/ranks">VISITE A LOJA</a>
+                    <a href="">VISITE A LOJA</a>
                 </div>
                 <div class="discord">
                     <h3>Discord</h3>
-                    <iframe src="https://discord.com/widget?id=1166786689566519369&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                    <iframe src="https://discord.com/widget?id=1275845368721969233&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
                     <button>Join Discord</button>
                 </div>
             </div>
@@ -344,6 +86,16 @@ footer {
                 this.classList.remove('animate');
             }, 500); // A duração aqui deve ser igual à da animação
         });
+       document.addEventListener("DOMContentLoaded", function () {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navMenu = document.querySelector('nav ul');
+
+    hamburgerMenu.addEventListener('click', function () {
+        navMenu.classList.toggle('active');
+    });
+});
+
+
     </script>
     
 </body>
