@@ -345,3 +345,9 @@ nav ul li a {
         width: 100%;
     }
 }
+footer {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 10px;
+    border-top: 2px solid #f1c40f;
+}
