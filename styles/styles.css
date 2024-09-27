@@ -36,34 +36,8 @@ nav ul li a {
     text-decoration: none;
 }
 
-.search {
-    display: flex;
-    align-items: center;
-}
 
-.search input {
-    padding: 5px;
-    border: none;
-    border-radius: 5px 0 0 5px;
-}
 
-.search button {
-    padding: 5px;
-    border: none;
-    background-color: #f1c40f;
-    color: #1a1a1a;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.search button:hover {
-    background-color: #e67e22;
-}
-
-.search button:active {
-    background-color: #d35400;
-}
 
 .status {
     display: flex;
@@ -129,16 +103,32 @@ nav ul li a {
     flex: 2;
     margin-right: 20px;
     border-right: 2px solid #f1c40f;
-    background-color: #2e2e2e; /* Fundo sólido */
+    background-color: #2e2e2e;
     padding: 20px;
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Alinhar ao topo */
     align-items: flex-start;
-    overflow: hidden;
-    border-radius: 10px; /* Bordas arredondadas */
+    text-align: left; /* Garantir alinhamento à esquerda */
+    border-radius: 10px;
 }
+
+.content .left h2,
+.content .left p,
+.content .left ul {
+    text-align: left; /* Garante que o texto esteja alinhado à esquerda */
+    margin-bottom: 15px; /* Ajuste de margens entre elementos */
+}
+
+.content .left ul {
+    padding-left: 20px; /* Adiciona indentação para as listas */
+}
+
+.content .left li {
+    margin-bottom: 10px; /* Adiciona espaço entre os itens da lista */
+}
+
 
 .content .left::before {
     content: '';
@@ -208,10 +198,14 @@ nav ul li a {
 }
 
 .content .right .discord {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #333;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra */
 }
+
 
 .content .right .discord iframe {
     margin-bottom: 20px;
@@ -232,11 +226,14 @@ nav ul li a {
 
 /* Estilo para o menu hambúrguer */
 .hamburger-menu {
-    display: none;
+    display: block;
     cursor: pointer;
     font-size: 28px;
     color: #fff;
-    margin-right: 10px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
 }
 
 @keyframes shake {
@@ -258,21 +255,19 @@ nav ul li a {
     animation-iteration-count: 1;
 }
 
-/* Estilos para Dispositivos Móveis */
-/* Estilos para Dispositivos Móveis */
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: #fff;
+    margin-right: 10px;
+}
 @media (max-width: 768px) {
     .logo {
         display: none; /* Oculta a logo */
     }
 
-    /* Posiciona o menu hambúrguer no canto esquerdo superior */
-    .hamburger-menu {
-        display: block;
-        position: absolute; /* Absoluto para permitir o posicionamento no canto superior */
-        top: 10px; /* Distância do topo */
-        left: 10px; /* Distância da esquerda */
-        z-index: 1000; /* Mantém o menu acima de outros elementos */
-    }
 
     header {
         display: flex;
@@ -284,14 +279,15 @@ nav ul li a {
 
     /* Outros estilos de navegação */
     nav ul {
-        display: none; /* Menu escondido por padrão */
+        display: none; /* Menu escondido inicialmente */
         flex-direction: column;
         width: 100%;
         background-color: #1a1a1a;
         position: absolute;
-        top: 50px; /* Ajuste o topo para posicionar abaixo do header */
+        top: 50px; /* Abaixo do cabeçalho */
         left: 0;
-        z-index: 999; /* Certifique-se de que está sobreposto corretamente */
+        z-index: 1000; /* Garante que o menu esteja acima do conteúdo */
+        padding: 10px 0;
     }
 
     nav ul.active {
@@ -350,4 +346,58 @@ footer {
     text-align: center;
     padding: 10px;
     border-top: 2px solid #f1c40f;
+}
+
+/* Estilos para Dispositivos Móveis */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+        position: relative; /* Altera a posição para relativa */
+        top: 20px; /* Ajuste a distância do topo para melhor posicionamento */
+        left: 20px; 
+        z-index: 1000; /* Mantém o menu acima de outros elementos */
+        background-color: #1a1a1a; /* Fundo preto para o menu */
+        padding: 10px;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column; 
+        justify-content: flex-start; 
+        align-items: flex-start;
+        position: relative;
+        z-index: 1; /* Garante que o header tenha prioridade sobre o menu */
+    }
+
+    nav ul {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        background-color: #1a1a1a; /* Fundo preto para o menu */
+        position: absolute;
+        top: 60px; /* Ajuste a altura para evitar sobreposição */
+        left: 0;
+        z-index: 999; /* Garante que o menu esteja visível sobre outros elementos */
+        border: none; /* Remove o corte */
+    }
+
+    nav ul.active {
+        display: flex; 
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .search,
+    .status {
+        display: none; /* Esconde outros elementos do header */
+    }
 }

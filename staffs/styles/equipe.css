@@ -11,12 +11,13 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: #1a1a1a;
-    padding: 20px 40px; 
+    padding: 20px 40px;
     border-bottom: 2px solid #f1c40f;
+    position: relative;
 }
 
 header .logo img {
-    height: 60px; 
+    height: 60px;
 }
 
 nav ul {
@@ -35,128 +36,22 @@ nav ul li a {
     text-decoration: none;
 }
 
-.search {
-    display: flex;
-    align-items: center;
-}
-
-.search input {
-    padding: 5px;
-    border: none;
-    border-radius: 5px 0 0 5px;
-}
-
-.search button {
-    padding: 5px;
-    border: none;
-    background-color: #f1c40f;
-    color: #1a1a1a;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.search button:hover {
-    background-color: #e67e22;
-}
-
-.search button:active {
-    background-color: #d35400;
-}
-
-.status {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
 .hero {
-    height: 450px; /* Adjust this value as needed to match the image */
+    height: 450px; 
     background: url('../../imagens/banner1.png') no-repeat center center/cover;
     display: flex;
-    align-items: center; /* Center content vertically */
-    justify-content: center; /* Center content horizontally */
-    text-align: center; /* Align text center */
-    margin-bottom: 20px; /* Adjust the margin to create space */
-    border-bottom: 2px solid #f1c40f; /* Add a border to create a clear division */
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    margin-bottom: 20px; 
+    border-bottom: 2px solid #f1c40f; 
 }
 
 .hero h1 {
-    font-size: 48px; /* Increase the size */
+    font-size: 48px; 
     color: #fff;
     text-transform: uppercase;
     margin: 0;
-}
-
-
-
-
-.content {
-    display: flex;
-    padding: 20px;
-}
-
-.content .left {
-    flex: 2;
-    margin-right: 20px;
-    border-right: 2px solid #f1c40f;
-    background-color: #1a1a1a;
-    padding: 20px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    overflow: hidden;
-}
-
-.content .left::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 200px;
-    background: url('../imagens/banner1.png') no-repeat center center;
-    background-size: cover; 
-    z-index: 0;
-}
-
-.content .left img {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 50px; 
-    height: auto;
-    z-index: 1;
-}
-
-.content .left h2,
-.content .left p {
-    position: relative;
-    z-index: 2;
-    margin-left: 60px; 
-}
-
-.content .left h2 {
-    margin-top: 40px;
-}
-
-.content .left p {
-    margin-top: 10px;
-}
-
-.content .right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.content .right img {
-    margin-bottom: 20px;
-    max-width: 100%;
-    height: auto;
 }
 
 .staff {
@@ -165,7 +60,7 @@ nav ul li a {
 }
 
 .staff-navigation {
-    width: 200px; /* Ajustar a largura da navegação lateral */
+    width: 200px;
     background-color: #1a1a1a;
     border-right: 2px solid #f1c40f;
     padding: 20px;
@@ -206,7 +101,7 @@ nav ul li a {
 .staff-members {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centralizar os membros da equipe */
+    justify-content: center;
 }
 
 .staff-member {
@@ -225,9 +120,100 @@ nav ul li a {
 .staff-member p {
     font-size: 16px;
 }
+
 footer {
     background-color: #1a1a1a;
     text-align: center;
     padding: 10px;
     border-top: 2px solid #f1c40f;
+}
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+
+
+/* Para telas menores que 768px */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .logo {
+        display: none; /* Oculta a logo */
+    }
+
+    /* Ajustar o alinhamento da logo e do ícone do menu */
+  
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .staff {
+        flex-direction: column;
+    }
+
+    .staff-navigation {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .staff-member {
+        width: 100px;
+    }
+
+    /* Exibir o ícone do menu hambúrguer */
+    .hamburger-menu {
+        display: block;
+        position: relative; /* Altera a posição para relativa */
+        top: 20px; /* Ajuste a distância do topo para melhor posicionamento */
+        left: 20px; 
+        z-index: 1000; /* Mantém o menu acima de outros elementos */
+        background-color: #1a1a1a; /* Fundo preto para o menu */
+        padding: 10px;
+    }
+
+    /* Esconder o menu de navegação por padrão */
+    nav.inicio {
+        display: none;
+        flex-direction: column;
+        background-color: #1a1a1a;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        z-index: 10;
+        padding: 20px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Exibir o menu quando ativo */
+    nav.inicio.active {
+        display: flex;
+    }
+
+    /* Ajustar os links de navegação para caberem no layout vertical */
+    nav.inicio ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav.inicio ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav.inicio ul li a {
+        display: block;
+        padding: 10px;
+        font-size: 18px;
+    }
 }
