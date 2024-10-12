@@ -4,11 +4,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkyWars</title>
+    <title>Regras - Servidor</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./regras.css">
-</head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
 
+        header {
+            background-color: #1a1a1a;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .search input {
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .search button {
+            padding: 5px 10px;
+            margin-left: 5px;
+            border-radius: 5px;
+            border: none;
+            background-color: #666;
+            color: #fff;
+        }
+
+        .status {
+            color: #aaa;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #222;
+        }
+
+        .hero img {
+            max-width: 200px;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            background-color: #f1c40f;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        /* Estiliza a seção de regras */
+        .regras-section {
+            padding: 40px;
+            background-color: #282828;
+            max-width: 900px;
+            margin: 0 auto;
+            flex-grow: 1;
+            border: 2px solid yellow;
+            border-radius: 10px;
+        }
+
+        .regras-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .regras-header p {
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        .regras-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid yellow;
+            border-radius: 10px;
+        }
+
+        .regras-table th, .regras-table td {
+            padding: 15px;
+            text-align: left;
+            color: #f0f0f0;
+        }
+
+        .regras-table thead th {
+            background-color: #444;
+            color: #fff;
+            border: 2px solid yellow;
+        }
+
+        .regras-table tbody tr {
+            background-color: #333;
+        }
+
+        .regras-table tbody tr:nth-child(even) {
+            background-color: #2a2a2a;
+        }
+
+        .ban-button {
+            padding: 8px 15px;
+            background-color: #ff4b4b;
+            border: 2px solid yellow;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Estiliza a barra lateral direita */
+        .right-sidebar {
+            width: 300px;
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-left: 2px solid #444;
+            margin-left: 20px;
+        }
+
+        /* Seções dentro da barra lateral */
+        .sidebar-section {
+            background-color: #2a2a2a;
+            margin-bottom: 20px;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border: 2px solid yellow;
+        }
+
+        .sidebar-section h3 {
+            margin-bottom: 10px;
+            font-size: 22px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .sidebar-section p {
+            color: #ccc;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-section a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #444;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar-section a:hover {
+            background-color: #ff6347;
+        }
+
+        /* Redes sociais */
+        .social-icons {
+            display: flex;
+            justify-content: space-around;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            font-size: 22px;
+            color: #fff;
+            background-color: #444;
+            border-radius: 50%;
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: #ff6347;
+        }
+
+        /* Container para alinhar tabela de regras e barra lateral */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .right-sidebar {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
 
 <body>
     <header>
@@ -20,7 +249,7 @@
                 <li><a href="./index.html">Início</a></li>
                 <li><i class="fas fa-shopping-cart"></i><a href="/games.html">Loja</a></li>
                 <li><i class="fa-solid fa-people-group"></i><a href="./staffs/staff.html">Staff</a></li>
-                <li><i class="fa-solid fa-book"></i><a href="#">Regras</a></li>
+                <li><i class="fa-solid fa-book"></i><a href="./regras.css">Regras</a></li>
             </ul>
         </nav>
         <div class="search">
@@ -38,52 +267,71 @@
         <button>JOGAR AGORA</button>
     </section>
 
-    <section class="regras-section">
-        <div class="regras-header">
-            <p>Fique atento as nossas regras, pois a qualquer momento elas podem ser alteradas sem aviso prévio!</p>
-        </div>
-        <table class="regras-table">
-            <thead>
-                <tr>
-                    <th>📜 Regra</th>
-                    <th>ℹ️ Descrição</th>
-                    <th>🚫 Punição</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Cheating/Hacking</td>
-                    <td>Utilizar hacks ou programas que tragam uma vantagem injusta ao usuário, em detrimento dos outros jogadores que não a possuem.</td>
-                    <td><button class="ban-button">Banimento</button></td>
-                </tr>
-                <tr>
-                    <td>Ameaças</td>
-                    <td>Realizar ameaças contra a integridade de outros jogadores ou do servidor.</td>
-                    <td><button class="ban-button">Banimento</button></td>
-                </tr>
-                <tr>
-                    <td>Assédio</td>
-                    <td>Utilizar o chat ou demais formas de comunicação de modo a assediar outros jogadores nas dependências do servidor.</td>
-                    <td><button class="ban-button">Banimento</button></td>
-                </tr>
-                <tr>
-                    <td>Abuso de Bugs</td>
-                    <td>Abusar de bugs em benefício de si ou outrem, em detrimento dos demais jogadores ou do servidor propriamente.</td>
-                    <td><button class="ban-button">Banimento</button></td>
-                </tr>
-                <tr>
-                    <td>Apologia ao Nazismo</td>
-                    <td>Manifestar apoio ao nazismo ou ideologias do tipo.</td>
-                    <td><button class="ban-button">Banimento</button></td>
-                </tr>
-                <tr>
-                    <td>Free Kill</td>
-                    <td>Intencionalmente permitir que outro jogador o mate para beneficiá-lo, ou receber tal benefício.</td>
-                    <td><button class="ban-button">Banimento</button></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+    <div class="container">
+        <section class="regras-section">
+            <div class="regras-header">
+                <p>Fique atento às nossas regras, pois elas podem ser alteradas sem aviso prévio!</p>
+            </div>
+            <table class="regras-table">
+                <thead>
+                    <tr>
+                        <th>📜 Regra</th>
+                        <th>ℹ️ Descrição</th>
+                        <th>🚫 Punição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cheating/Hacking</td>
+                        <td>Utilizar hacks ou programas que tragam vantagem injusta ao usuário.</td>
+                        <td><button class="ban-button">Banimento</button></td>
+                    </tr>
+                    <tr>
+                        <td>Ameaças</td>
+                        <td>Ameaçar a integridade de outros jogadores ou do servidor.</td>
+                        <td><button class="ban-button">Banimento</button></td>
+                    </tr>
+                    <tr>
+                        <td>Assédio</td>
+                        <td>Usar o chat ou outros meios para assediar jogadores.</td>
+                        <td><button class="ban-button">Banimento</button></td>
+                    </tr>
+                    <tr>
+                        <td>Abuso de Bugs</td>
+                        <td>Aproveitar-se de bugs para obter vantagens.</td>
+                        <td><button class="ban-button">Banimento</button></td>
+                    </tr>
+                    <tr>
+                        <td>Apologia ao Nazismo</td>
+                        <td>Manifestações de apoio ao nazismo ou qualquer discurso de ódio.</td>
+                        <td><button class="ban-button">Banimento</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Barra lateral direita -->
+        <aside class="right-sidebar">
+            <!-- Seção de IP -->
+            <div class="sidebar-section">
+                <h3>NOSSO IP</h3>
+                <p>Junte-se aos outros <strong>0 jogadores!</strong></p>
+                <a href="#">battle.land</a>
+            </div>
+
+            <!-- Seção de Social -->
+            <div class="sidebar-section">
+                <h3>SOCIAL</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    
+                </div>
+            </div>
+        </aside>
+    </div>
 </body>
 
 </html>
